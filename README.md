@@ -1,4 +1,4 @@
-![Texto alternativo](./tareas/tarea1/assets/logos/CentroGeo_Logo-H.png "CentroGeo")
+<img src="./tareas/tarea1/assets/logos/CentroGeo_Logo-H.png" alt="CentroGeo" width="600" height="200">
 
 # CG_MCIG_Geoweb
 
