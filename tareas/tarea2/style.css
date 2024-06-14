@@ -1,0 +1,350 @@
+/* Selector universal */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*A. Insertar una clase para los elementos: <body> y listas (de definiciones, ordenadas y
+desordenadas)*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0095ff;
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+
+ol {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+
+dd {
+    margin-bottom: 1rem;
+}
+
+dt {
+    margin-bottom: 1rem;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*B. Insertar una clase para <table> considerando sus componentes: <td><th><tr>*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th {
+    background-color: #0095ff;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #0095ff;
+}
+
+tr {
+    background-color: #f9f9f9;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*C. Agregar una clase para la etiqueta <a href…>*/
+a {
+    color: #003261;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+a:active {
+    color: #3131316c
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*D. Crear una clase para cada uno de los seis tipos de cabeceras <h1 .. h6>*/
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}   
+
+h5 {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}   
+
+h6 {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*E. Establecer al menos una regla general con el selector de atributos.*/
+[class^="menu"] {
+    background-color: #3131316c;
+    color: #fff;
+    padding: 1rem;
+    height: 5vh;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*F. Hacer una clase general y al menos dos clases adicionales para los elementos: <p>,
+<div>, <span>, <button>*/
+
+.contenido {
+    background-color: #3131316c;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 63vh;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+}
+
+.contenido div {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contenido p {
+    font-size: small;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.contenido span {
+    width: 30%;
+    background-color: #ffffff;
+}
+
+.contenido button {
+    width: 30%;
+    background-color: #ff8800;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.contenido button:hover {
+    background-color: #4c2b00
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/* G. Realizar una clase que aplique sólo cuando un elemento <span> está anidado dentro
+de una etiqueta <div>*/
+
+.contenido div span {
+    color: #0095ff
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+
+.encabezado {
+    background-color: #3131316c;
+    height: 10vh;
+    padding-top: 0;
+    border-top: 0;
+    margin-top: 0;
+    text-align: center;
+    border-radius: 1rem;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.encabezado-logo {
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+.encabezado-logo img {
+    width: 15rem;
+    /* Pone el logo a 1 rem del borde de la derecha */
+    position: absolute;
+    right: 5rem;
+    /* Pone el logo a 1 rem del borde de arriba */
+    top: 5rem;
+    border-radius: 1rem;
+}
+
+.pie-pagina {
+    background-color: #3131316c;
+    color: #fff;
+    text-align: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: 15vh;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+}
+
+.contenido-formulario {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 60vh;
+    width: 33%;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: #3131316c;
+}
+
+.contenido-mapa {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 60vh;
+    width: 33%;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: #3131316c;
+}
+
+.contenido-texto {
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 60vh;
+    width: 33%;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #3131316c;
+}
+
+.contenido-mapa-div {
+    /* Pone los elementos en una columna */
+    display: flex;
+    flex-direction: column;
+    color: #333
+}
+
+#map {
+    height: 40vh;
+    width: 40vh;
+    border-radius: 1rem;
+    color: #333
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/* J. Implementar diseño responsivo al menos para dos tipos de pantallas.
+
+/* Para tablet */
+@media screen and (max-width: 768px) {
+    .contenido {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .contenido div {
+        width: 100%;
+    }
+
+    .contenido span {
+        width: 100%;
+    }
+
+    .contenido button {
+        width: 100%;
+    }
+
+    .contenido-formulario {
+        width: 100%;
+    }
+
+    .contenido-mapa {
+        width: 100%;
+    }
+
+    .contenido-texto {
+        width: 100%;
+    }
+}
+
+/* Para celular */
+@media screen and (max-width: 425px) {
+    .contenido {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .contenido div {
+        width: 95%;
+    }
+
+    .contenido span {
+        width: 100%;
+    }
+
+    .contenido button {
+        width: 40%;
+    }
+
+    .contenido-formulario {
+        width: 100%;
+    }
+
+    .contenido-mapa {
+        width: 100%;
+    }
+
+    .contenido-texto {
+        width: 100%;
+    }
+
+    .encabezado-logo img {
+        width: 8rem;
+        right: 2rem;
+        top: 4rem;
+    }
+}

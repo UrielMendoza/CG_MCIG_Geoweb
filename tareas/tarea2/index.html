@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CentroGeo. Maestria en CIG. GeoWeb. Tarea 2. Uriel Mendoza y Raul Sánchez</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body class="pagina">
+
+    <header class="encabezado">
+        <h1>Encabezado</h1>
+        <!-- H. Insertar una imagen y agregar una clase-->
+        <a class="encabezado-logo" href="https://www.centrogeo.org.mx/">
+            <img src="./assets/logos/CentroGeo_Logo-H.png" alt="CentroGeo">
+        </a>
+    </header>
+
+    <div class="menu">
+        <h1>Menú</h1>
+    </div>
+
+    <div class="contenido">
+        <div class="contenido-formulario">
+
+            <br>
+            <!-- I. Agregar un formulario con todas las etiquetas html de formulario y crear estilos para cada elemento.-->
+            <form action="" id="coordinateForm">
+                <h1>Formulario</h1>
+                <div>
+                    <label for="etiqueta">Sede:</label>
+                    <input type="text" id="etiqueta" name="etiqueta" required>
+                </div>
+                <div>
+                    <label for="latitud">Latitud:</label>
+                    <input type="text" id="latitud" name="latitud" required>
+                </div>
+                <div>
+                    <label for="longitud">Longitud:</label>
+                    <input type="text" id="longitud" name="longitud" required>
+                </div>
+                <div>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <label for="select">Categoria:</label>
+                <select id="select" name="select">
+                    <option value="opcion1">Maestría</option>
+                    <option value="opcion2">Doctorado</option>
+                </select>
+                <div>
+                    <label for="checkbox">Finalizada:</label>
+                    <input type="checkbox" id="checkbox" name="checkbox">
+                </div>
+                <div>
+                    <label for="radio1">Presencial:</label>
+                    <input type="radio" id="radio1" name="radio">
+                </div>
+                <div>
+                    <label for="radio2">Virtual:</label>
+                    <input type="radio" id="radio2" name="radio">
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+            
+        </div>
+        <div class="contenido-mapa">
+            <div class="contenido-mapa-div">
+                <h1>Mapa y Contenidos</h1>
+                <br>
+                <!-- J. Agregar un mapa con Leaflet y agregar un marcador en una posición fija. -->
+                <div id="map"></div>
+            </div>
+
+        </div>
+        <div class="contenido-texto">
+            <h1>Contenido, texto e imágenes</h1>
+            <div id="contenido-resultados">
+            </div>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <h1>Pie de página</h1>
+    </footer>
+
+
+</body>
+
+</html>
