@@ -1,4 +1,4 @@
-<img src="./tareas/tarea1/assets/logos/CentroGeo_Logo-H.png" alt="CentroGeo" width="400" height="100">
+<img src="./tareas/tarea1/assets/logos/CentroGeo_Logo-H.png" alt="CentroGeo" width="200">
 
 # CG_MCIG_Geoweb
 
