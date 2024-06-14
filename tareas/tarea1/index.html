@@ -1,28 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarea 1</title>
+    <title>CentroGeo. Maestria en CIG. GeoWeb. Tarea 1. Uriel Mendoza y Raul Sánchez</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body class="pagina">
 
-<header class="encabezado">
-</header>
+    <header class="encabezado">
+        <h1>Encabezado</h1>
+        <!-- H. Insertar una imagen y agregar una clase-->
+        <a class="encabezado-logo">
+            <img src="./assets/logos/CentroGeo_Logo-H.png" alt="CentroGeo">
+        </a>
+    </header>
 
-<div  class="menu">
-</div>
+    <div class="menu">
+        <h1>Menú</h1>
+    </div>
 
-<div class="contenido">
-<div class="contenido-formulario">
-</div>
-<div class="contenido-mapa"></div>
-<div class="contenido-texto">
-</div>
-</div>
+    <div class="contenido">
+        <div class="contenido-formulario">
 
-<footer class="pie-pagina"></footer>
+            <br>
+            <!-- I. Agregar un formulario con todas las etiquetas html de formulario y crear estilos para cada elemento.-->
+            <form action="">
+                <h1>Formulario</h1>
+                <div>
+                    <label for="nombre">Etiqueta:</label>
+                    <input type="text" id="etiqueta" name="etiqueta" required>
+                </div>
+                <div>
+                    <label for="apellido">Latitud:</label>
+                    <input type="text" id="latitud" name="latitud" required>
+                </div>
+                <div>
+                    <label for="email">Longitud:</label>
+                    <input type="text" id="longitud" name="longitud" required>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+            
+        </div>
+        <div class="contenido-mapa">
+            <h1>Mapa y Contenidos</h1>
+        </div>
+        <div class="contenido-texto">
+            <h1>Contenido, texto e imágenes</h1>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <h1>Pie de página</h1>
+    </footer>
 
 </body>
+
 </html>

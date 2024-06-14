@@ -1,3 +1,4 @@
+/* Selector universal */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -5,12 +6,21 @@
 
 }
 
+html {
+    font-size: 62.5%;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*A. Insertar una clase para los elementos: <body> y listas (de definiciones, ordenadas y
+desordenadas)*/
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #0095ff;
-    color: #333;
+    color: #ffffff;
     font-size: 16px;
     margin-top: 20px;
+    padding: 1rem;
 }
 
 ul {
@@ -28,31 +38,50 @@ dd {
 }
 
 dt {
-    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
+/*----------------------------------------------------------------------------------------------------*/
+/*B. Insertar una clase para <table> considerando sus componentes: <td><th><tr>*/
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 1rem;
 }
 
-table th {
+th {
     background-color: #0095ff;
     color: #fff;
     padding: 0.5rem;
     text-align: left;
 }
 
-table td {
+td {
     padding: 0.5rem;
     border-bottom: 1px solid #0095ff;
 }
 
-table tr {
+tr {
     background-color: #f9f9f9;
 }
 
+/*----------------------------------------------------------------------------------------------------*/
+/*C. Agregar una clase para la etiqueta <a href…>*/
+a {
+    color: #003261;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+a:active {
+    color: #3131316c
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*D. Crear una clase para cada uno de los seis tipos de cabeceras <h1 .. h6>*/
 h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -81,78 +110,228 @@ h5 {
 h6 {
     font-size: 0.75rem;
     margin-bottom: 1rem;
-}   
-
-p {
-    margin-bottom: 1rem;
 }
 
-.encabezado {
-    background-color: #3131316c;
-    width: 100%;
-    height: 15vh;
-    margin-top: 0;
-    text-align: center;
-}
-
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/*----------------------------------------------------------------------------------------------------*/
+/*E. Establecer al menos una regla general con el selector de atributos.*/
+[class^="menu"] {
     background-color: #3131316c;
     color: #fff;
     padding: 1rem;
-    height: 10vh;
+    height: 5vh;
     margin-top: 0.5rem;
-}
-
-.menu p {
-    font-size: 1.25rem;
-}
-
-.menu button {
-    background-color: #fff;
-    color: #0095ff;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.menu button:hover {
-    background-color: #f9f9f9;
-}
-
-.menu button:active {
-    background-color: #f0f0f0;
-}  
-
-.menu-logo {
+    border-radius: 1rem;
+    text-align: center;
     display: flex;
+    justify-content: center;
     align-items: center;
-    width: 30%;
 }
+
+/*F. Hacer una clase general y al menos dos clases adicionales para los elementos: <p>,
+<div>, <span>, <button>*/
 
 .contenido {
     background-color: #3131316c;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 55vh;
+    height: 63vh;
     margin-top: 0.5rem;
+    border-radius: 1rem;
+}
+
+.contenido div {
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    margin-bottom: 1rem;
+}
+
+.contenido p {
+    width: 30%;
+    background-color: #333;
 }
 
 .contenido span {
     width: 30%;
-    background-color: #333;
+    background-color: #ffffff;
+}
+
+.contenido button {
+    width: 30%;
+    background-color: #ff8800;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.contenido button:hover {
+    background-color: #4c2b00
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/* G. Realizar una clase que aplique sólo cuando un elemento <span> está anidado dentro
+de una etiqueta <div>*/
+
+.contenido div span {
+    background-color: #ff7328;
+    color: #fff;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+
+.encabezado {
+    background-color: #3131316c;
+    height: 10vh;
+    padding-top: 0;
+    border-top: 0;
+    margin-top: 0;
+    text-align: center;
+    border-radius: 1rem;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.encabezado-logo {
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+.encabezado-logo img {
+    width: 15rem;
+    /* Pone el logo a 1 rem del borde de la derecha */
+    position: absolute;
+    right: 5rem;
+    /* Pone el logo a 1 rem del borde de arriba */
+    top: 5rem;
+    border-radius: 1rem;
 }
 
 .pie-pagina {
     background-color: #3131316c;
     color: #fff;
     text-align: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
     height: 15vh;
     margin-top: 0.5rem;
-}	
+    border-radius: 1rem;
+}
 
+.contenido-formulario {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 60vh;
+    width: 33%;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: #3131316c;
+}
+
+.contenido-mapa {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 60vh;
+    width: 33%;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: #3131316c;
+}
+
+.contenido-texto {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 60vh;
+    width: 33%;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: #3131316c;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/* J. Implementar diseño responsivo al menos para dos tipos de pantallas.
+
+/* Para tablet */
+@media screen and (max-width: 768px) {
+    .contenido {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .contenido div {
+        width: 100%;
+    }
+
+    .contenido span {
+        width: 100%;
+    }
+
+    .contenido button {
+        width: 100%;
+    }
+
+    .contenido-formulario {
+        width: 100%;
+    }
+
+    .contenido-mapa {
+        width: 100%;
+    }
+
+    .contenido-texto {
+        width: 100%;
+    }
+}
+
+/* Para celular */
+@media screen and (max-width: 425px) {
+    .contenido {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .contenido div {
+        width: 95%;
+    }
+
+    .contenido span {
+        width: 100%;
+    }
+
+    .contenido button {
+        width: 40%;
+    }
+
+    .contenido-formulario {
+        width: 100%;
+    }
+
+    .contenido-mapa {
+        width: 100%;
+    }
+
+    .contenido-texto {
+        width: 100%;
+    }
+
+    .encabezado-logo img {
+        width: 8rem;
+        right: 2rem;
+        top: 4rem;
+    }
+}
