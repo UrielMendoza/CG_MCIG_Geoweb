@@ -1,2 +1,15 @@
+![Texto alternativo](./tareas/tarea1/assets/logos/CentroGeo_Logo-H.png "CentroGeo")
+
 # CG_MCIG_Geoweb
-Repositorio para codigo de la materia de geoweb de la maestria en ciancias en información geoespacial de CentroGeo.
+
+## CentroGeo
+### Maestria en Ciencias en Información Geoespacial.
+### GeoWeb.
+
+**Profesor:** Mtro. Amilcar Morales Gamas
+
+**Alumnos:**
+- Uriel de Jesús Mendoza Castillo
+- Raul Sánchez Márquez
+
+Repositorio para envió de tareas y proyectos de la materia de GeoWeb.
