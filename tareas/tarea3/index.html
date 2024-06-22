@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CentroGeo. Maestria en CIG. GeoWeb. Tarea 2. Uriel Mendoza y Raul Sánchez</title>
+
+    <!-- Estilos CSS y JS -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js"></script>
+
+    <!-- Leaflet CSS y JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/498d90ec8b.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="pagina">
+
+    <header class="encabezado">
+        <div class="encabezado-autores">
+            <a href="">
+                <i class="fas fa-user"></i> Uriel de Jesús Mendoza Castillo
+            </a>
+            <a href="">
+                <i class="fas fa-user"></i> Raul Sánchez Márquez
+        </div>
+
+        <div class="encabezado-repositorio">
+            <i class="fas fa-code-branch"></i>
+            <p href="">Repositorio GitHub</p>
+        </div>
+
+        <a class="encabezado-logo-1" href="https://www.centrogeo.org.mx/">
+            <img src="./assets/logos/CentroGeo_Logo-H.png" alt="CentroGeo">
+        </a>
+
+        <a class="encabezado-logo-2" href="">
+            <img src="./assets/logos/CONAHCYT.png" alt="CONAHCYT">
+        </a>
+    </header>
+
+    <div class="menu">
+        <div class="menu-buscador">
+            <input type="text" placeholder="Buscar...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="menu-titulo">
+            10 Montañas más altas de México.
+        </div>
+        <div class="menu-opciones">
+            <a href="">
+                <i class="fas fa-home"></i>
+                Inicio
+            </a>
+            <a href="">
+                <i class="fas fa-info-circle"></i>
+                Acerca de
+            </a>
+            <a href="">
+                <i class="fas fa-list-ol"></i>
+                Lista Top 10
+            </a>
+        </div>
+    </div>
+
+    <div class="contenido">
+        <div class="contenido-formulario">
+
+            <br>
+            <!-- F. Agregar un formulario con todas las etiquetas html de formulario y crear estilos para cada elemento.-->
+            <form action="" id="coordinateForm">
+                <h1>Formulario</h1>
+                <div>
+                    <label for="etiqueta">Entidad Federativa:</label>
+                    <input type="text" id="etiqueta" name="etiqueta" required>
+                </div>
+                <div>
+                    <label for="latitud">Altitud:</label>
+                    <input type="text" id="latitud" name="latitud" required>
+                </div>
+                Ruta:
+                <div>
+                    <label for="longitud">Inicio:</label>
+                    <input type="text" id="longitud" name="longitud" required>
+                </div>
+                <div>
+                    <label for="longitud">Fin:</label>
+                    <input type="text" id="longitud" name="longitud" required>
+                </div>
+            </form>
+            
+        </div>
+        <div class="contenido-mapa">
+            <div class="contenido-mapa-div">
+                <h1>Mapa</h1>
+                <br>
+                <div id="map"></div>
+            </div>
+
+        </div>
+        <div class="contenido-texto">
+            <div id="contenido-resultados">
+                <h1>Visualización 3D</h1>
+                <br>
+                <img src="./assets/img/3d.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <div class="pie-pagina-info-1">
+            2024. CentroGeo. Maestría en Ciencias de la Información Geoespacial.
+        </div>
+        <div class="pie-pagina-info-2">
+            Asignatura: GeoWeb. Profesor: Amilcar Morales Gamas
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
