@@ -1,0 +1,89 @@
+/* style.css */
+
+/* Tipografía moderna y minimalista */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background: linear-gradient(to bottom, #002f4b, #000000);
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #e0f7fa;
+}
+
+form {
+    background-color: #0d1b2a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #e0f7fa;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #1b263b;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: #1b263b;
+    color: #e0f7fa;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #00587a;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #003f5c;
+}
+
+select {
+    background-color: #1b263b;
+    color: #e0f7fa;
+}
+
+span {
+    background-color: lightsteelblue;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.contenido {
+    background-color: #1b263b;
+    color: #e0f7fa;
+    padding-left: 2rem;
+    border-radius: 12px;
+    /*width: 300px;*/
+    max-height: 575px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
