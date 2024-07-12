@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>GeoWeb: Consulta_DB_GeoJSON_II</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:," />
+    <meta name="description" content="Intro a los metodos de formulario" />
+    <meta name="keywords" content="html, geoweb, desarrollo web"/>
+    <meta name="author" content="Grupo de Geoweb CIG 2023" />
+    <meta name="copyright" content="CentroGeo 2024" />
+    <meta name="robots" content="index,follow" />
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <!--Link al CSS-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!--Link al JS-->
+    <script src="./js/main_ajax_post.js"></script>
+    <style>
+        #map {
+            height: 600px; /* Ajusta la altura del mapa según sea necesario */
+            width: 100%;   /* Ancho completo del contenedor */
+        }
+        .map-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; /* Centra el contenido dentro del contenedor */
+            height: 75%;
+            width: 50%;
+        }
+        h2 {
+            margin-bottom: 10px; /* Ajusta el espacio entre el título y el mapa */
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="map-container">
+        <h2>Mapa de consulta a BD</h2>
+        <div id='map'></div>
+    </div>
+    <form action="#" method="post" id="envio_post">
+        <label for="clase">Instituciones cercanas a CentroGeo:</label>
+        <select id="instituciones" name="instituciones">
+            <option value="" selected disabled>Seleccione cantidad de instituciones</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select><br>
+
+        <label for="centros">Centros Públicos de Investigación más cercanos al CentroGeo:</label>
+        <select id="centros" name="centros">
+            <option value="" selected disabled>Seleccione cantidad de centros</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select><br>
+
+        <label for="distancia">Calcular distancia a CentroGeo:</label>
+        <input type="radio" id="raul" name="distancia" value="raul">
+        <label for="raul">Distancia a domicilio de Raul</label>
+        <input type="radio" id="uriel" name="distancia" value="uriel">
+        <label for="uriel">Distancia a domicilio de Uriel</label><br>
+
+        <label for="instituciones_km">Instituciones cercanas a CentroGeo:</label>
+        <select id="instituciones_km" name="instituciones_km">
+            <option value="" selected disabled>Seleccione distancia en km</option>
+            <option value="1">1 km</option>
+            <option value="5">5 km</option>
+            <option value="8">8 km</option>
+            <option value="10">10 km</option>
+        </select><br>
+
+        <label for="calcular_linea">Trazar linea de la dirección del domicilio a CentroGeo:</label>
+        <input type="checkbox" id="calcular_linea" name="calcular_linea" value="true">
+
+        <input id="submit" type="submit" value="Enviar">
+    </form>
+    <span id="contenido" class="contenido"></span>
+<script>
+
+
+</script>
+</body>
+</html>
