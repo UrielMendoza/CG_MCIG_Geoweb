@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG_GeoWeb_ProyectoFinal_UM_RS Mapas</title>  
+    
+    <!--Favicon-->
+    <script src="https://kit.fontawesome.com/498d90ec8b.js" crossorigin="anonymous"></script>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+        
+</head>
+<body>
+
+<!-- Mapa Modal -->
+<div id="mapaModal" class="mapa-modal">
+    <div class="mapa-modal-content">
+        <!-- Botón de cierre del modal -->
+        <span class="mapa-modal-close">&times;</span>
+
+        <!-- Logos en las esquinas superiores con fondo primario -->
+        <div class="logos-contenedor">
+            <a href="https://www.centrogeo.org.mx/"><img src="./assets/logos/centrogeo.png" alt="Logo 1" class="logo"></a>
+            <a href="https://conahcyt.mx/"><img src="./assets/logos/conahcyt.png" alt="Logo 2" class="logo"></a>
+        </div>
+
+        <!-- Título del modal -->
+        <h2>Información sobre los datos</h2>
+
+        <p>Este mapa interactivo permite visualizar diferentes capas de datos geoespaciales.</p>
+        
+        <!-- Categorías de datos dentro del modal -->
+        <div class="datos-categoria">
+            <div class="datos-categoria-item">
+                <h3><i class="fa fa-folder fa-fw"></i> Pesca</h3>
+                <p>Esta capa incluye información sobre áreas de pesca permitidas, zonas de exclusión, rutas migratorias de especies clave, y datos sobre la distribución de las poblaciones de peces. Proporciona herramientas esenciales para la gestión sostenible de los recursos marinos.</p>
+                <div class="mapa-modal-checkbox-container">
+                    <label class="mapa-modal-checkbox">
+                        <input type="checkbox" id="pesca-modal-checkbox" onclick="activarCategoria('pesca-modal-checkbox')">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="pesca-modal-checkbox">Activar capa de Pesca</label>
+                </div>
+            </div>
+            <div class="datos-categoria-item">
+                <h3><i class="fa fa-folder fa-fw"></i> Económicas</h3>
+                <p>Esta capa muestra datos sobre la actividad económica relacionada con la pesca, como la ubicación de puertos pesqueros, mercados, y centros de procesamiento. Además, incluye información sobre el impacto económico de la pesca en diferentes regiones.</p>
+                <div class="mapa-modal-checkbox-container">
+                    <label class="mapa-modal-checkbox">
+                        <input type="checkbox" id="economicas-modal-checkbox" onclick="activarCategoria('economicas-modal-checkbox')">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="economicas-modal-checkbox">Activar capa Económicas</label>
+                </div>
+            </div>
+            <div class="datos-categoria-item">
+                <h3><i class="fa fa-folder fa-fw"></i> Climáticas</h3>
+                <p>Aquí se presentan datos sobre las condiciones climáticas y oceánicas que afectan la pesca, incluyendo temperatura del agua, corrientes, y patrones climáticos que influyen en la distribución de las especies marinas.</p>
+                <div class="mapa-modal-checkbox-container">
+                    <label class="mapa-modal-checkbox">
+                        <input type="checkbox" id="climaticas-modal-checkbox" onclick="activarCategoria('climaticas-modal-checkbox')">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="climaticas-modal-checkbox">Activar capa Climáticas</label>
+                </div>
+            </div>
+            <div class="datos-categoria-item">
+                <h3><i class="fa fa-folder fa-fw"></i> Básicas</h3>
+                <p>Esta capa proporciona información geográfica fundamental, como límites territoriales, áreas protegidas, y características geográficas generales (costas, islas, plataformas continentales), esenciales para el análisis espacial y la toma de decisiones en la pesca.</p>
+                <div class="mapa-modal-checkbox-container">
+                    <label class="mapa-modal-checkbox">
+                        <input type="checkbox" id="basicas-modal-checkbox" onclick="activarCategoria('basicas-modal-checkbox')">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label for="basicas-modal-checkbox">Activar capa Básicas</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <div id="map"></div>
+    
+    <div class="mapa-panel">
+            <!-- Sección de Logos -->
+        <div class="logos-contenedor">
+            <div class="logos">
+                <img src="./assets/logos/centrogeo.png" alt="Logo 1" class="logo">
+            </div>
+        </div>
+        <h3>Capas Geoespaciales <i class="fa fa-database" aria-hidden="true"></i></h3>
+        
+        <!-- Sección Pesca -->
+        <h2>
+            Pesca 
+            <button class="toggle-btn" onclick="toggleCategory('pesca')" active>
+                <i class="fa fa-chevron-down"></i>
+            </button>
+        </h2>
+        <div id="pesca" class="categoria-capas">
+            <label class="custom-checkbox">
+                <input type="checkbox" id="zonas-pesca" onchange="toggleLayer('zonas-pesca')">
+                <span class="checkmark"></span>
+                Zonas de pesca
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="refugios-pesqueros" onchange="toggleLayer('refugios-pesqueros')">
+                <span class="checkmark"></span>
+                Refugios pesqueros
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="zonas-conservacion" onchange="toggleLayer('zonas-conservacion')">
+                <span class="checkmark"></span>
+                Zonas de conservación
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="especies" onchange="toggleLayer('especies')">
+                <span class="checkmark"></span>
+                Especies
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="sitios-conservacion" onchange="toggleLayer('sitios-conservacion')">
+                <span class="checkmark"></span>
+                Sitios marítimos de conservación
+            </label>
+        </div>
+        
+        <!-- Sección Económicas -->
+        <h2>
+            Económicas 
+            <button class="toggle-btn" onclick="toggleCategory('economicas')">
+                <i class="fa fa-chevron-down"></i>
+            </button>
+        </h2>
+        <div id="economicas" class="categoria-capas">
+            <label class="custom-checkbox">
+                <input type="checkbox" id="zonas-economica-exclusiva" onchange="toggleLayer('zonas-economica-exclusiva')">
+                <span class="checkmark"></span>
+                Zonas económica exclusiva
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="limite-economica-exclusiva" onchange="toggleLayer('limite-economica-exclusiva')">
+                <span class="checkmark"></span>
+                Límite de zona económica exclusiva
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="puertos-nacionales" onchange="toggleLayer('puertos-nacionales')">
+                <span class="checkmark"></span>
+                Puertos nacionales
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="puertos-internacionales" onchange="toggleLayer('puertos-internacionales')">
+                <span class="checkmark"></span>
+                Puertos internacionales
+            </label>
+        </div>
+        
+        <!-- Sección Climáticas -->
+        <h2>
+            Climáticas 
+            <button class="toggle-btn" onclick="toggleCategory('climaticas')">
+                <i class="fa fa-chevron-down"></i>
+            </button>
+        </h2>
+        <div id="climaticas" class="categoria-capas">
+            <label class="custom-checkbox">
+                <input type="checkbox" id="temperatura-mar" onchange="toggleLayer('temperatura-mar')">
+                <span class="checkmark"></span>
+                Temperatura superficial del mar
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="salinidad-mar" onchange="toggleLayer('salinidad-mar')">
+                <span class="checkmark"></span>
+                Salinidad superficial del mar
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="clorofila" onchange="toggleLayer('clorofila')">
+                <span class="checkmark"></span>
+                Concentración de clorofila
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="hipsometria-batimetria" onchange="toggleLayer('hipsometria-batimetria')">
+                <span class="checkmark"></span>
+                Hipsometría y batimetría
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="batimetria" onchange="toggleLayer('batimetria')">
+                <span class="checkmark"></span>
+                Batimetría
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="geomorfologia-marina" onchange="toggleLayer('geomorfologia-marina')">
+                <span class="checkmark"></span>
+                Geomorfología marina
+            </label>
+        </div>
+        
+        <!-- Sección Básicas -->
+        <h2>
+            Básicas 
+            <button class="toggle-btn" onclick="toggleCategory('basicas')">
+                <i class="fa fa-chevron-down"></i>
+            </button>
+        </h2>
+        <div id="basicas" class="categoria-capas">
+            <label class="custom-checkbox">
+                <input type="checkbox" id="estados" onchange="toggleLayer('estados')">
+                <span class="checkmark"></span>
+                Estados
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="municipios" onchange="toggleLayer('municipios')">
+                <span class="checkmark"></span>
+                Municipios
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="territorio-insular" onchange="toggleLayer('territorio-insular')">
+                <span class="checkmark"></span>
+                Territorio insular
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="sitios-marinos-conservacion" onchange="toggleLayer('sitios-marinos-conservacion')">
+                <span class="checkmark"></span>
+                Sitios marítimos de conservación
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="areas-naturales-protegidas" onchange="toggleLayer('areas-naturales-protegidas')">
+                <span class="checkmark"></span>
+                Áreas naturales protegidas
+            </label>
+        </div>
+    </div>
+    
+    
+    
+
+    <!-- Botón para mostrar/ocultar el panel -->
+    <div class="mapa-toggle-btn">
+        <i class="fas fa-layer-group"></i>
+    </div>
+
+    <!-- Botones de herramientas -->
+    <div class="mapa-herramientas">
+        <div class="mapa-herramienta-btn" title="Herramienta 1">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="mapa-herramienta-btn" title="Herramienta 2">
+            <i class="fas fa-ruler"></i>
+        </div>
+        <div class="mapa-herramienta-btn" title="Herramienta 3">
+            <i class="fas fa-info-circle"></i>
+        </div>
+    </div>
+
+    <script>
+
+window.addEventListener('DOMContentLoaded', function() {
+    // Inicializar el mapa
+    var map = L.map(document.getElementById('map')).setView([23, -102], 5);
+    var Stadia_AlidadeSmoothDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}', {
+        minZoom: 0,
+        maxZoom: 20,
+        attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        ext: 'png'
+    }).addTo(map);
+
+    // Funcionalidad del botón de capas
+    document.querySelector('.mapa-toggle-btn').addEventListener('click', function() {
+        var panel = document.querySelector('.mapa-panel');
+        var toggleBtn = document.querySelector('.mapa-toggle-btn');
+        
+        if (panel.style.left === '0px') {
+            panel.style.left = '-300px';
+            toggleBtn.classList.remove('active');
+        } else {
+            panel.style.left = '0px';
+            toggleBtn.classList.add('active');
+        }
+    });
+
+    // Función para mostrar/ocultar las categorías en el panel de capas
+    function toggleCategory(categoryId) {
+        const category = document.getElementById(categoryId);
+        const icon = category.previousElementSibling.querySelector('i');
+
+        if (category.classList.contains('visible')) {
+            category.classList.remove('visible');
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        } else {
+            category.classList.add('visible');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        }
+    }
+
+    // Asignar la funcionalidad a los botones de las flechas
+    document.querySelectorAll('.toggle-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const categoryId = this.getAttribute('onclick').replace("toggleCategory('", "").replace("')", "");
+            toggleCategory(categoryId);
+        });
+    });
+
+    // Mostrar el modal al hacer clic en el botón de información
+    var modal = document.getElementById("mapaModal");
+    var infoButton = document.querySelector('.fa-info-circle');
+    var span = document.getElementsByClassName("mapa-modal-close")[0];
+
+    // Mostrar el modal al cargar la página
+    modal.style.display = "block";
+
+    // Mostrar el modal cuando se hace clic en el botón de información
+    infoButton.addEventListener('click', function() {
+        modal.style.display = "block";
+    });
+
+    // Cerrar el modal cuando el usuario hace clic en (x)
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Cerrar el modal cuando el usuario hace clic fuera de la ventana del modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Función para activar la categoría y cerrar el modal
+    function activarCategoria(checkboxId) {
+        const checkbox = document.getElementById(checkboxId);
+        checkbox.checked = true;
+
+        // Llamada a la función para cargar las capas de la categoría seleccionada
+        cargarCapas(checkboxId);
+
+        // Cerrar el modal
+        document.getElementById("mapaModal").style.display = "none";
+    }
+
+    // Función para cargar las capas según la categoría seleccionada
+    function cargarCapas(checkboxId) {
+        // Aquí defines lo que ocurre al seleccionar la categoría
+        // Esto podría ser la carga de capas en el mapa según la categoría seleccionada
+        console.log(`Cargando capas para: ${checkboxId}`);
+    }
+});
+
+
+
+
+
+    </script>
+
+</body>
+</html>

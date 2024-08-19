@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG_GeoWeb_ProyectoFinal_UM_RS</title>  
+    
+    <!--Favicon-->
+    <script src="https://kit.fontawesome.com/498d90ec8b.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+        
+</head>
+<body>
+    <div class="inicio">
+        <div class="inicio-header">
+            <div class="logos-contenedor">
+                <div class="logos">
+                    <a href="https://www.centrogeo.org.mx/"><img src="./assets/logos/centrogeo.png" alt="Logo 1" class="logo"></a>
+                    <a href="https://conahcyt.mx/"><img src="./assets/logos/conahcyt.png" alt="Logo 2" class="logo"></a>                
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Inicio</a></li>
+                    <li><a class="list-group-item" href="#"><i class="fa fa-database fa-fw" aria-hidden="true"></i>&nbsp; Datos</a></li>
+                    <li><a class="list-group-item" href="#"><i class="fa fa-map fa-fw" aria-hidden="true"></i>&nbsp; Mapa</a></li>
+                    <li><a class="list-group-item" href="#"><i class="fa fa-info fa-fw" aria-hidden="true"></i>&nbsp; Información</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="inicio-content">
+            <h1>Sistema de Pesca Sustentable</h1>
+            <p>Este geoportal es una herramienta diseñada para promover prácticas de pesca responsables y proteger nuestros valiosos recursos marinos. Aquí encontrarás un mapa interactivo y datos relevantes que te ayudarán a tomar decisiones informadas sobre la pesca sostenible.
+            </p>
+            
+            <a href="./mapa.html" class="btn">Mapa</a>
+        </div>
+    </div>
+    <div class="secciones">
+        <div class="secciones-header">
+            <h2>Centro de datos</h2>
+
+            <p>Este geoportal tiene datos provenientes del Sistema de Información del Mar (SIMAR) de la Comisión Nacional para el Conocimiento y Uso de la Biodiversidad (CONABIO) y del Servicio de Información Agroalimentaria y Pesquera (SIAP). Estos datos nos permiten ofrecer información actualizada y precisa sobre áreas de pesca, hábitats críticos, condiciones oceánicas y más.</p>
+        </div>
+        <div class="secciones-contenido">
+            <div class="seccion" onclick="location.href='datos.html'">
+                <div class="seccion-overlay"></div>
+                <img src="./assets/img/secciones_img_1.jpg" alt="Datos" class="seccion-img">
+                <div class="seccion-texto">Datos</div>
+            </div>
+            <div class="seccion" onclick="location.href='mapa_3d.html'">
+                <div class="seccion-overlay"></div>
+                <img src="./assets/img/secciones_img_2.jpg" alt="In-Situ" class="seccion-img">
+                <div class="seccion-texto">Vistas 3D</div>
+            </div>
+        </div>
+    </div>
+    <div class="informacion">
+        <div class="informacion-logos">
+            <img src="./assets/logos/conabio_b.png" alt="Logo 1">
+            <img src="./assets/logos/siap_b.png" alt="Logo 2">
+            <img src="./assets/logos/inegi_b.png" alt="Logo 3">
+            <img src="./assets/logos/idegeo_b.png" alt="Logo 4">
+        </div>
+        <div class="informacion-content">
+            <div class="informacion-section">
+                <div class="informacion-logos">
+                    <img src="./assets/logos/logo_centrogeo-25_wide-white.svg" alt="Logo 1">
+                </div>
+                <p>Centro de Investigación en Ciencias de Información Geoespacial, A.C. (CentroGeo)</p>
+                <p>C. Contoy 137, Lomas de Padierna, Tlalpan, 14240 Ciudad de México, CDMX, México</p>
+            </div>
+            <div class="informacion-section">
+                <h3>Proyecto Final</h3>
+                <ul>
+                    <li><p>Maestría en Ciencias en Información Geoespacial</p></li>
+                    <li><p>GeoWeb</p></li>
+                    <li><p>Profesor: Mtro. Amílcar Morales Gamas</p></li>
+                    <div class="informacion-section-fotos">
+                        <img src="./assets/img/profesor.png" alt="">
+                    </div>
+                </ul>
+            </div>
+            <div class="informacion-section">
+                <h3>Alumnos</h3>
+                <ul>
+                    <li><p>Uriel de Jesús Mendoza Castillo</p></li>
+                    <li><p>Raúl Sánchez Márquez</p></li>
+                    <div class="informacion-section-fotos">
+                        <img src="./assets/img/uriel.png" alt="">
+                        <img src="./assets//img/raul.jpeg" alt="">
+                    </div>
+                </ul>
+            </div>
+            <div class="informacion-section">
+                <h3>Contacto</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

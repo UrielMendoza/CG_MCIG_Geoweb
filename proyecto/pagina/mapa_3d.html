@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG_GeoWeb_ProyectoFinal_UM_RS Mapas</title>  
+    
+    <!--Favicon-->
+    <script src="https://kit.fontawesome.com/498d90ec8b.js" crossorigin="anonymous"></script>
+
+    <!-- Map Libre -->
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/style.css">
+        
+</head>
+<body>
+
+    <div id="map"></div>
+    
+    <div class="mapa-panel">
+            <!-- Sección de Logos -->
+        <div class="logos-contenedor">
+            <div class="logos">
+                <img src="./assets/logos/centrogeo.png" alt="Logo 1" class="logo">
+            </div>
+        </div>
+        <h3>Capas Geoespaciales <i class="fa fa-database" aria-hidden="true"></i></h3>
+        
+        <!-- Sección Pesca -->
+        <h2>
+            Puertos 
+            <button class="toggle-btn" onclick="toggleCategory('pesca')" active>
+                <i class="fa fa-chevron-down"></i>
+            </button>
+        </h2>
+        <div id="pesca" class="categoria-capas">
+            <label class="custom-checkbox">
+                <input type="checkbox" id="zonas-pesca" onchange="toggleLayer('zonas-pesca')">
+                <span class="checkmark"></span>
+                Puertos Nacionales
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="refugios-pesqueros" onchange="toggleLayer('refugios-pesqueros')">
+                <span class="checkmark"></span>
+                Puertos Internacionales
+            </label>
+        </div>
+        
+
+    </div>   
+    
+
+    <!-- Botón para mostrar/ocultar el panel -->
+    <div class="mapa-toggle-btn">
+        <i class="fas fa-layer-group"></i>
+    </div>
+
+    <!-- Botones de herramientas -->
+    <div class="mapa-herramientas">
+        <div class="mapa-herramienta-btn" title="Herramienta 1">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="mapa-herramienta-btn" title="Herramienta 2">
+            <i class="fas fa-ruler"></i>
+        </div>
+        <div class="mapa-herramienta-btn" title="Herramienta 3">
+            <i class="fas fa-info-circle"></i>
+        </div>
+    </div>
+
+    <script>
+
+maptilersdk.config.apiKey = 'T1wdjt9CJ60nXh9sVX3L';
+    const map = new maptilersdk.Map({
+      container: 'map', // container id
+      style: 'ocean',
+      center: [126.419, 10.2021], // starting position [lng, lat]
+      zoom: 9.12, // starting zoom
+      pitch: 77,
+      bearing: -20,
+      maxPitch: 85,
+    });
+    map.on('load', function() {
+      map.addSource("bathymetry", {
+        type: 'raster-dem',
+        url: 'https://api.maptiler.com/tiles/ocean-rgb/tiles.json',
+      });
+      map.setTerrain({ source: 'bathymetry', exaggeration: 1.5 });
+    });
+
+
+        // Funcionalidad del botón de capas
+        document.querySelector('.mapa-toggle-btn').addEventListener('click', function() {
+            var panel = document.querySelector('.mapa-panel');
+            var toggleBtn = document.querySelector('.mapa-toggle-btn');
+            
+            if (panel.style.left === '0px') {
+                panel.style.left = '-300px';
+                toggleBtn.classList.remove('active');
+            } else {
+                panel.style.left = '0px';
+                toggleBtn.classList.add('active');
+            }
+        });
+
+        function toggleCategory(categoryId) {
+        const category = document.getElementById(categoryId);
+        const icon = category.previousElementSibling.querySelector('i');
+
+        if (category.classList.contains('visible')) {
+            category.classList.remove('visible');
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        } else {
+            category.classList.add('visible');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        }
+    }
+
+    </script>
+
+</body>
+</html>

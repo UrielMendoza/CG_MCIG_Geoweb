@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG_GeoWeb_ProyectoFinal_UM_RS Datos</title>  
+    
+    <!--Favicon-->
+    <script src="https://kit.fontawesome.com/498d90ec8b.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+        
+</head>
+<body>
+    <div class="datos">
+        <div class="datos-header">
+            <div class="logos-contenedor">
+                <div class="logos">
+                    <a href="https://www.centrogeo.org.mx/"><img src="./assets/logos/centrogeo.png" alt="Logo 1" class="logo"></a>
+                    <a href="https://conahcyt.mx/"><img src="./assets/logos/conahcyt.png" alt="Logo 2" class="logo"></a>                
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Inicio</a></li>
+                    <li><a class="list-group-item" href="#"><i class="fa fa-database fa-fw" aria-hidden="true"></i>&nbsp; Datos</a></li>
+                    <li><a class="list-group-item" href="#"><i class="fa fa-map fa-fw" aria-hidden="true"></i>&nbsp; Mapa</a></li>
+                    <li><a class="list-group-item" href="#"><i class="fa fa-info fa-fw" aria-hidden="true"></i>&nbsp; Información</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="datos-content">
+            <div class="informacion-logos">
+                <img src="./assets/logos/conabio_b.png" alt="Logo 1">
+                <img src="./assets/logos/siap_b.png" alt="Logo 2">
+                <img src="./assets/logos/inegi_b.png" alt="Logo 3">
+                <img src="./assets/logos/idegeo_b.png" alt="Logo 4">
+            </div>
+            <h1>Centro de datos</h1>
+            <p>Este geoportal tiene datos provenientes del Sistema de Información del Mar (SIMAR) de la Comisión Nacional para el Conocimiento y Uso de la Biodiversidad (CONABIO) y del Servicio de Información Agroalimentaria y Pesquera (SIAP). Estos datos nos permiten ofrecer información actualizada y precisa sobre áreas de pesca, hábitats críticos, condiciones oceánicas y más.</p>
+
+            <div class="datos-categoria">
+                <div class="datos-categoria-item">
+                    <h3><i class="fa fa-folder fa-fw"></i>Pesca</h3>
+                    <p>Esta capa incluye información sobre áreas de pesca permitidas, zonas de exclusión, rutas migratorias de especies clave, y datos sobre la distribución de las poblaciones de peces. Proporciona herramientas esenciales para la gestión sostenible de los recursos marinos.</p>
+                    <ul>
+                        <li><a class="list-group-item" href="#" onclick="myFuncxtion('value4')">Catálogo de pesca 2022</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFuncxtion('value4')">Especies de peces</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value1')">Zonas de pesca del Golfo de California</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value2')">Refugios pesqueros</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFuncxtion('value4')">Sitios maritimos de conservación</a></li>
+                    </ul>
+                </div>
+                <div class="datos-categoria-item">
+                    <h3><i class="fa fa-folder fa-fw"></i>Económicas</h3>
+                    <p>Esta capa muestra datos sobre la actividad económica relacionada con la pesca, como la ubicación de puertos pesqueros, mercados, y centros de procesamiento. Además, incluye información sobre el impacto económico de la pesca en diferentes regiones.</p>
+                    <ul>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value1')">Zonas ecónomica esclusiva</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value2')">Limite de zona ecónomica esclusiva</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value3')">Puertos nacionales</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFuncxtion('value4')">Puertos internacionales</a></li>
+                    </ul>
+                </div>
+                <div class="datos-categoria-item">
+                    <h3><i class="fa fa-folder fa-fw"></i>Climáticas</h3>
+                    <p>Aquí se presentan datos sobre las condiciones climáticas y oceánicas que afectan la pesca, incluyendo temperatura del agua, corrientes, y patrones climáticos que influyen en la distribución de las especies marinas.</p>
+                    <ul>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value1')">Temperatura superficial del mar</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value2')">Salinidad superficial del mar</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value3')">Concentración de clorofila</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value4')">PH superficial</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFuncxtion('value5')">Hipsometria y batimetria</a></li>
+<!--                         <li><a class="list-group-item" href="#" onclick="myFuncxtion('value6')">Batimetria</a></li> -->
+                        <li><a class="list-group-item" href="#" onclick="myFuncxtion('value7')">Geomorfologia marina</a></li>
+                    </ul>
+                </div>
+                <div class="datos-categoria-item">
+                    <h3><i class="fa fa-folder fa-fw"></i>Básicas</h3>
+                    <p>Esta capa proporciona información geográfica fundamental, como límites territoriales, áreas protegidas, y características geográficas generales (costas, islas, plataformas continentales), esenciales para el análisis espacial y la toma de decisiones en la pesca.</p>
+                    <ul>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value1')">Estados</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value2')">Municipios</a></li>
+                        <li><a class="list-group-item" href="#" onclick="myFunction('value3')">Territorio insular</a></li>
+<!--                         <li><a class="list-group-item" href="#" onclick="myFuncxtion('value4')">Sitios maritimos de conservación</a></li> -->
+                        <li><a class="list-group-item" href="#" onclick="myFuncxtion('value4')">Áreas naturales protegidas</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="informacion">
+        <div class="informacion-logos">
+            <img src="./assets/logos/conabio_b.png" alt="Logo 1">
+            <img src="./assets/logos/siap_b.png" alt="Logo 2">
+            <img src="./assets/logos/inegi_b.png" alt="Logo 3">
+            <img src="./assets/logos/idegeo_b.png" alt="Logo 4">
+        </div>
+        <div class="informacion-content">
+            <div class="informacion-section">
+                <div class="informacion-logos">
+                    <img src="./assets/logos/logo_centrogeo-25_wide-white.svg" alt="Logo 1">
+                </div>
+                <p>Centro de Investigación en Ciencias de Información Geoespacial, A.C. (CentroGeo)</p>
+                <p>C. Contoy 137, Lomas de Padierna, Tlalpan, 14240 Ciudad de México, CDMX, México</p>
+            </div>
+            <div class="informacion-section">
+                <h3>Proyecto Final</h3>
+                <ul>
+                    <li><p>Maestría en Ciencias en Información Geoespacial</p></li>
+                    <li><p>GeoWeb</p></li>
+                    <li><p>Profesor: Mtro. Amílcar Morales Gamas</p></li>
+                    <div class="informacion-section-fotos">
+                        <img src="./assets/img/profesor.png" alt="">
+                    </div>
+                </ul>
+            </div>
+            <div class="informacion-section">
+                <h3>Alumnos</h3>
+                <ul>
+                    <li><p>Uriel de Jesús Mendoza Castillo</p></li>
+                    <li><p>Raúl Sánchez Márquez</p></li>
+                    <div class="informacion-section-fotos">
+                        <img src="./assets/img/uriel.png" alt="">
+                        <img src="./assets//img/raul.jpeg" alt="">
+                    </div>
+                </ul>
+            </div>
+            <div class="informacion-section">
+                <h3>Contacto</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
